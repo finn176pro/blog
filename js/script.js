@@ -4,6 +4,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
+            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
             target.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
@@ -15,17 +17,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Active navigation link highlighting
 window.addEventListener('scroll', () => {
     let current = '';
-    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = Array.from(navLinks)
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
         if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
+            current = section.id;
         }
     });
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    if (!current && pageYOffset < 150) {
+        current = 'home';
+    }
+
+    navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href').slice(1) === current) {
             link.classList.add('active');

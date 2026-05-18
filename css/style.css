@@ -71,6 +71,10 @@ body {
 }
 
 /* Hero Section */
+#home {
+    scroll-margin-top: 90px;
+}
+
 .hero {
     background: linear-gradient(135deg, rgba(44, 62, 80, 0.8) 0%, rgba(52, 152, 219, 0.8) 100%), url('../img/geralt-neurons-7420670_1920.jpg');
     background-size: cover;
@@ -104,7 +108,7 @@ body {
 
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 2rem;
 }
 
@@ -181,9 +185,10 @@ body {
 
 .about-content {
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
+    text-align: center;
+    gap: 1.5rem;
 }
 
 .profile-pic {
@@ -195,24 +200,76 @@ body {
 }
 
 .about-text {
-    flex: 1;
-    min-width: 300px;
+    max-width: 700px;
+    width: 100%;
 }
 
-.about-text p {
-    margin-bottom: 1rem;
-    line-height: 1.8;
-}
+    .timeline {
+        position: relative;
+        margin-top: 2.5rem;
+        padding-left: 2rem;
+    }
 
-/* Footer */
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        width: 3px;
+        height: 100%;
+        background: var(--secondary-color);
+        border-radius: 2px;
+    }
+
+    .timeline-item {
+        position: relative;
+        padding: 1.5rem 1rem 1.5rem 2.5rem;
+        margin-bottom: 1.5rem;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+    }
+
+    .timeline-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .timeline-year {
+        position: absolute;
+        top: 1.5rem;
+        left: -0.15rem;
+        transform: translateX(-100%);
+        display: inline-block;
+        padding: 0.4rem 0.75rem;
+        background: var(--primary-color);
+        color: var(--light-text);
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        white-space: nowrap;
+    }
+
+    .timeline-details h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .timeline-details p {
+        color: #555;
+        line-height: 1.7;
+    }
+.contact-section,
 .footer {
+    scroll-margin-top: 120px;
+}
+
+.contact-section {
+    padding: 3rem 0;
     background-color: var(--primary-color);
     color: var(--light-text);
-    padding: 3rem 0 1rem;
-    margin-top: 3rem;
 }
 
-.footer h3 {
+.contact-section h2 {
     text-align: center;
     margin-bottom: 1.5rem;
 }
@@ -284,12 +341,27 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero {
+        background-attachment: scroll;
+        padding: 4rem 0;
+    }
+
     .hero h1 {
         font-size: 2rem;
     }
 
+    .hero p {
+        font-size: 1.1rem;
+    }
+
     .nav-links {
         gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .blog-grid {
@@ -298,7 +370,17 @@ body {
 
     .about-content {
         flex-direction: column;
+        align-items: center;
         text-align: center;
+    }
+
+    .about-text {
+        min-width: auto;
+    }
+
+    .profile-pic {
+        width: 160px;
+        height: 160px;
     }
 
     .social-links {
