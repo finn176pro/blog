@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supraleitende magnetische Energiespeicher - Finn Lindemann</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Finn Lindemann</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#blog">Blog</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="post-container">
+        <article>
+            <div class="post-header">
+                <h1>Supraleitende magnetische Energiespeicher (SMES)</h1>
+                <p class="post-meta">Published on May 18, 2026</p>
+            </div>
+
+            <div class="post-content">
+                <h2>Einleitung</h2>
+                <p>Der durch die Energiewende benötigte Speicherbedarf wird derzeit zum Großteil von Pumpspeicherwerken gewährleistet, die 90% der europäischen Speicherkapazitäten ausmachen (Colmenar-Santos et al., 2023). Aufgrund ihrer physischen Eigenschaften und ihrer Größe stellt die Installation ein Problem dar und sie entladen sich durch die Verdunstung von Wasser selbst.
+
+                Eine Alternative Speichermethode stellen supraleitende magnetische Energiespeicher (SMES) dar. Diese speichern elektrische Energie in einem Magnetfeld und weisen unterhalb der kritischen Temperatur aufgrund des supraleitenden Effekts keine Stromwärmeverluste auf (Terörde, 2012).
+
+                SMES erlauben also eine nahezu direkte elektrische Energieumwandlung mit einem Wirkungsgrad größer 95% (Hannachi et al., 2022), weisen im Vergleich zu Superkondensatoren höhere Energiedichten auf und können mit hohen Leistungen binnen Millisekunden entladen werden, wodurch sie sich als Impulsgeneratoren für den Ausgleich von plötzlichen Netzschwankungen anbieten würden (Rummich, 1978).
+
+                Allerdings haben sie auch Nachteile wie hohe Kosten, große Streufelder oder große Spulendurchmesser, welche später näher erläutert werden (Terörde, 2012).</p>
+
+                <h2>Aufbau und Funktionsweise</h2>
+                <p>SMES bestehen im Wesentlichen aus einer supraleitenden Spule, einem Kryostat, einer Wechselrichterschaltung, einer Steuereinheit und einer Kältemaschine (Terörde, 2012). Über einen Transformator kann diese Anlage entsprechend ans Netz angeschlossen werden.
+
+                Die Energie ist in Form eines statischen Magnetfeldes, welches durch einen Gleichstrom in der Spule erzeugt wird, gespeichert. Da die Spule in einem adiabatischen Kryostat verbaut ist und mit einer Kältemaschine gekühlt wird, kann durch den supraleitenden Effekt der Strom in der Spule nahezu widerstandslos fließen und die Energie verlustfrei speichern.
+
+                Am häufigsten wird Niobium-titanium (NbTi), welches mit flüssigem Helium auf 2-4 K heruntergekühlt wird, für SMES als Leitermaterial verwendet (Hannachi et al., 2022). Die supraleitende Spule ist das Herzstück von SMES. Die Leiterbahnen der Spule bestehen zwar hauptsächlich aus supraleitenden Material, für bessere mechanische Festigkeit und Schutz vor Quench, werden zusätzlich Kupfer-, Aluminium- oder Silberlegierungen eingesetzt.
+
+                Die maximale Energiekapazität wird neben den Charakteristiken der Leiter und der mechanischen Struktur der Spule hauptsächlich von der Geometrie der Spule beeinflusst. Bei der Spulenform wird in Ringspule (Toroid) und Zylinderspule (Solenoid) unterschieden.
+
+                <strong>Toroide</strong> haben den Vorteil das magnetische Feld gut einzuschließen und somit ein geringes Streufeld zu erzeugen. Allerdings weisen sie im Vergleich zu Solenoiden eine komplexere mechanische Struktur auf und benötigen mehr Supraleiter für den gleichen Energiegehalt.
+
+                <strong>Solenoide</strong> weisen eine höhere Volumenenergiedichte auf, sind kostengünstiger und einfacher zu bauen. Konstruiert man sie aber für den MWh-Bereich, können sie Streufelder von 1ha bis 1km² erzeugen, die nicht betreten werden dürfen, weil dort Feldstärken von 5 bis 10 T erreicht würden (Terörde, 2012).
+
+                Nach dem Gesetz von Biot-Savart erkennt man, dass die magnetische Energie eines Stromkreises von der Integration über das gesamte Volumen der Leiterschleife abhängt. Dies führt zwingend zu einer begrenzten Speicherkapazität von SMES, wenn man den Bereich elektromagnetischer Verschmutzung eingrenzen möchte (Hannachi et al., 2022).
+
+                <h2>Chancen und Herausforderungen</h2>
+                <p>Die wichtigsten Parameter von SMES sind die maximale Lade-/Entladeleistung, Gesamtzahl von Lade-/Entladezyklen, Reaktionszeit und die Dauer der Leistungsabgabe. Es gibt einige Hürden bei der Optimierung dieser Parameter. So können zum Beispiel schnelle Entladungen AC-Verluste verursachen, die bei unzureichender Kühlung zum Quench führen könnten.
+
+                Die maximale Leistung von SMES wird durch die maximal zulässige Stromstärke und Spannung begrenzt. Die Stromstärke wird dadurch begrenzt, dass im Zuge der Lorentzkraft, welche durch Wechselwirkung zwischen Magnetfeld und Betriebsstrom entsteht, Zugspannungen in den Leitern der Spule erzeugt werden. Die Spannung wird hingegen von den Isolationsschichten limitiert, welche wiederum nicht zu hoch ausgelegt werden dürfen, weil dadurch die Kühlung erschwert wird.
+                In der Entwicklung von SMES haben sich zwei grundlegende Konzepte entwickelt: die LTS (low-temperature superconducting) basierten SMES und die HTS (high-temperature superconducting) basierten SMES.
+
+                Der größte Vorteil von HTS SMES im Vergleich zu LTS SMES ist der geringere Kühlungsaufwand, da HTS-Materialien eine Sprungtemperatur von über 77 K aufweisen und theoretisch mit günstigerem flüssigem Stickstoff gekühlt werden könnten. Außerdem erhöht sich der Carnot-Wirkungsgrad der Kältemaschinen bei einer Betriebstemperatur von 20 K um den Faktor 5,3 und bei einer Betriebstemperatur von 50 K sogar um den Faktor 14,8 (Hannachi et al., 2022).
+                Allerdings sind LTS-SMES schon technologisch ausgereift und werden zum Ausgleich von Spannungsschwankungen eingesetzt.
+
+                
+                Der größte Vorteil von SMES gegenüber anderen Speichersystemen ist die Eigenschaft, in kurzer Zeit große Leistungen in das Netz einzuspeisen, um Ausfälle auf der Erzeuger- und Verbraucherseite zu kompensieren. Zudem haben sie im Vergleich zu Batteriespeichern geringere negative Umwelteinflüsse.
+
+                Eine der größten Nachteile von SMES ist zurzeit die Wirtschaftlichkeit, besonderer Fokus liegt auf der Entwicklung des Kryosystems, da dieses 15% der Gesamtkosten von SMES ausmacht (Hannachi et al., 2022). HTS basierte SMES könnten die Kosten des Kühlsystems in der Zukunft verringern.
+
+               
+                SMES können für die Stabilisierung des Netzes in Bezug auf Frequenzregulierung und Ausgleichen von Lastspitzen verwendet werden. Gerade in Mikronetzen, wo typischerweise Brennstoffzellen, Photovoltaikanlagen, Windkraftanlagen oder Dieselgeneratoren als Energiequellen eingesetzt werden, können SMES aushelfen.
+
+                Vor allem erneuerbare Energien und Elektrofahrzeuge können starke Lastschwankungen in diesen Mikronetzen hervorrufen, welche durch SMES ausgeglichen werden könnten. Diesbezüglich werden SMES mit einer Kapazität von 200kJ untersucht und in China sind bereits solche Anlagen im Netz integriert (Hannachi et al., 2022).
+
+                Zudem ist zu erwarten, dass SMES in der Raumfahrt und in der Medizintechnik eine Rolle spielen werden.</p>
+
+                <h2>Quellen</h2>
+                <ul>
+                    <li>E. Rummich, Nichtkonventionelle Energienutzung, Springer-Verlag, Wien, 1978</li>
+                    <li>M. Terörde, Einsatz eines supraleitenden Energiespeichers zur Primärregelung bei DESY, FernUniversität Hagen, 2012</li>
+                    <li>Y. Slimani, E. Hannachi, Superconducting Materials, Springer Nature Singapore, Singapore, 2022</li>
+                </ul>
+            </div>
+        </article>
+
+        <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ecf0f1;">
+            <a href="../index.html#blog" class="read-more">← Back to Blog</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <h3>Get in Touch</h3>
+            <div class="social-links">
+                <a href="mailto:your-email@example.com" class="social-link">Email</a>
+            </div>
+            <p class="footer-text">&copy; 2026 My Personal Blog. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
