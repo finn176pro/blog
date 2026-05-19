@@ -21,16 +21,23 @@ window.addEventListener('scroll', () => {
     const sections = Array.from(navLinks)
         .map(link => document.querySelector(link.getAttribute('href')))
         .filter(Boolean);
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.id;
-        }
-    });
 
-    if (!current && pageYOffset < 150) {
+    const scrollTop = window.scrollY;
+    const scrollBottom = scrollTop + window.innerHeight;
+    const pageHeight = document.documentElement.scrollHeight;
+
+    if (scrollTop <= 50) {
         current = 'home';
+    } else if (scrollBottom >= pageHeight - 50) {
+        current = 'contact';
+    } else {
+        const viewportMiddle = scrollTop + window.innerHeight / 2;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (viewportMiddle >= sectionTop) {
+                current = section.id;
+            }
+        });
     }
 
     navLinks.forEach(link => {
@@ -55,6 +62,29 @@ if ('IntersectionObserver' in window) {
     document.querySelectorAll('img').forEach(img => {
         img.style.opacity = '0.7';
         imageObserver.observe(img);
+    });
+
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const item = entry.target;
+            const index = Array.from(timelineItems).indexOf(item);
+
+            if (entry.isIntersecting) {
+                item.style.transitionDelay = `${index * 0.1}s`;
+                item.classList.add('is-visible');
+            } else {
+                item.style.transitionDelay = '0s';
+                item.classList.remove('is-visible');
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    timelineItems.forEach(item => {
+        timelineObserver.observe(item);
     });
 }
 
